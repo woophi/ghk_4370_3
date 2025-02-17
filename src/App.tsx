@@ -1,5 +1,4 @@
-import { ButtonMobile } from '@alfalab/core-components/button/mobile';
-import { Gap } from '@alfalab/core-components/gap';
+import { TagMobile } from '@alfalab/core-components/tag/mobile';
 import { Typography } from '@alfalab/core-components/typography';
 import { useState } from 'react';
 import bg from './assets/bg.png';
@@ -12,7 +11,6 @@ import ya from './assets/ya.png';
 import { LS, LSKeys } from './ls';
 import { appSt } from './style.css';
 import { ThxLayout, ThxLayout1 } from './thx/ThxLayout';
-
 const data = [
   {
     title: 'Яндекс Еда',
@@ -104,6 +102,21 @@ export const App = () => {
   return (
     <>
       <div className={appSt.container}>
+        <div>
+          <TagMobile disabled={loading} size="xxs" shape="rounded" checked>
+            Списком
+          </TagMobile>
+          <TagMobile
+            disabled={loading}
+            style={{ marginLeft: '.5rem' }}
+            size="xxs"
+            shape="rounded"
+            onClick={submit}
+            view="filled"
+          >
+            На карте
+          </TagMobile>
+        </div>
         {data.map(item => (
           <div className={appSt.row} key={item.title} onClick={() => submitOnRow(item.analytics)}>
             <img width={48} height={48} src={item.img} />
@@ -125,13 +138,6 @@ export const App = () => {
             </div>
           </div>
         ))}
-      </div>
-      <Gap size={96} />
-
-      <div className={appSt.bottomBtn}>
-        <ButtonMobile loading={loading} block view="primary" onClick={submit}>
-          На карте
-        </ButtonMobile>
       </div>
     </>
   );
