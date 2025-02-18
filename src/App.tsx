@@ -78,7 +78,7 @@ export const App = () => {
   const submit = () => {
     window.gtag('event', '4370_map_var3');
     setLoading(true);
-    // LS.setItem(LSKeys.ShowThx, true);
+    LS.setItem(LSKeys.ShowThx, true);
     setThx(true);
     setLoading(false);
   };
@@ -86,7 +86,7 @@ export const App = () => {
     window.gtag('event', analytcis);
 
     setLoading(true);
-    // LS.setItem(LSKeys.ShowThx, true);
+    LS.setItem(LSKeys.ShowThx, true);
     setThx1(true);
     setLoading(false);
   };
